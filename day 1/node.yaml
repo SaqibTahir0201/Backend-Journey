@@ -1,0 +1,12 @@
+day 1:
+  Node.js Crash Course by Traversy Media: https://www.youtube.com/watch?v=32M1al-Y6Ag&t=756s
+  index.js = main file
+  utils.js = module file or for utility functions or functions that we used in our website
+  2 types of exports:
+    1. commonJS - used in Node.js
+      module.exports = {functionName}
+      const {functionName} = require('./utils')
+    2. ES6 Modules - used in React
+    for module first we need to add "type": "module" in package.json file
+      export {functionName}
+      import {functionName} from './utils.js'

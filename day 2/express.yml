@@ -1,0 +1,18 @@
+express js => manages everything from receiving a request to sending a response
+
+2 types to write middleware
+1. app.use() => used to write global middleware
+2. app.METHOD() => used to write middleware for specific HTTP methods
+    - METHOD: get, post, put, delete, patch, all
+    - app.all() => used to write middleware for all HTTP methods    
+    - app.get() => used to write middleware for GET requests
+    - app.post() => used to write middleware for POST requests
+
+
+| Type              | Kya karta hai                   | Example                           |
+| ----------------- | ------------------------------- | --------------------------------- |
+| Application-level | Har request pe chale            | `app.use(...)`                    |
+| Router-level      | Sirf ek router ke liye chale    | `router.use(...)`                 |
+| Error-handling    | Error aane pe chale             | `app.use((err,req,res,next)=>{})` |
+| Built-in          | Express ke andar ready hota hai | `express.json()`                  |
+| Third-party       | Bahar se install karte hain     | `morgan`, `cors`                  |
