@@ -1,0 +1,10 @@
+1. form handling and working with forms
+2. handle backend process of forms and making  sure the data coming from any fronted 
+   lib,frame work , template engines 
+
+session cookie
+cookie => apka data jo fronted pai save hai
+session => apka connection server sai (aik taar)
+blob => binary large object (not readable)
+
+hum loog kuch bhi data fronted per browser per store kar sakte hai and jub bhi ap kuch bhi request backend per karoge wo fronted per save data automatically backend per chala jayega
