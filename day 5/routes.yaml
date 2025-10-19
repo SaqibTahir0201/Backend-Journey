@@ -1,0 +1,1 @@
+in routes file we use router instead of app and after that we have to export the router and import in main file 

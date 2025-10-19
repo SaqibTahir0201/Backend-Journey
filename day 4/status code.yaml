@@ -1,0 +1,8 @@
+status code:
+200 => OK || Success
+201 => Created
+300 => redirect
+400 => client error || Bad Request
+404 => Not Found
+500 => Internal Server Error || Server Error
+403 => Forbidden

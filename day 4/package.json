@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "name": "day-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
