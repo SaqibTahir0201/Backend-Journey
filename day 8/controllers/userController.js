@@ -14,12 +14,14 @@ const registerUser = async (req, res) => {
     // const saltRound = 10;
     // const hash_password = await bcrypt.hash(password, saltRound);
 
-    const user = await User.create({ name, email, password ,phone });
+    const userCreate = await User.create({ name, email, password ,phone });
     // console.log("Hash:", hash_password);
 
     res.status(201).json({
       message: "User registered successfully",
-      user,
+      userCreate,
+      token: await userCreate.generateToken(),
+      userId:userCreate._id.toString()
     });
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });
