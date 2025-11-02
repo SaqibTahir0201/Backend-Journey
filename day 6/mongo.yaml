@@ -1,0 +1,14 @@
+there are 2 servers in backend, application server which  is nodejs second is databse server which is  mongodb in my case \
+
+1. (A) ager data base hai aur uske ander chote chote data hai jo (A) sai belong kerte hai to yai chote chote data collection keh laenge
+2. Collection kai ander aik bunde ka data Dcoument kehlata hai
+
+Database -> Collection -> Dcoument
+
+CODE                DATABASE  
+-------------------------------------
+mongoose.connect -> Database create 
+
+model create     -> collection create
+
+CREATE           -> Dcoument create
