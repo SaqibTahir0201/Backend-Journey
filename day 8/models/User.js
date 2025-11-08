@@ -45,6 +45,11 @@ userSchema.pre("save", async function (next) {
   }
 });
 
+// compare password
+userSchema.methods.comparePassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
+
 // json web token
 userSchema.methods.generateToken = async function () {
   try {
@@ -56,7 +61,7 @@ userSchema.methods.generateToken = async function () {
       },
       process.env.JWT_SECRET_KEY,
       {
-        expiresIn:"30d"
+        expiresIn: "30d",
       }
     );
   } catch (error) {
