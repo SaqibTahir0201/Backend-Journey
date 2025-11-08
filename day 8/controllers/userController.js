@@ -1,5 +1,5 @@
 const User = require("../models/User");
-// const bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 
 const registerUser = async (req, res) => {
   try {
@@ -36,7 +36,7 @@ const login = async function (req, res) {
     const userExist = await User.findOne({ email });
 
     if (!userExist) {
-      return res.status(400).json({ messege: "invalid credentials" });
+      return res.status(400).json({ messege: "user not found" });
     }
 
     // password compare
@@ -47,16 +47,19 @@ const login = async function (req, res) {
     if (user) {
       res.status(200).json({
         message: "User login successful",
-        userCreate,
-        token: await userCreate.generateToken(),
-        userId: userCreate._id.toString(),
+        // userCreate,
+        token: await userExist.generateToken(),
+        userId: userExist._id.toString(),
       });
-    }else{
-      res.status(401).json({ messege: "invalid credentials" });
+    } else {
+      res.status(401).json({ messege: "wrong email or password" });
     }
   } catch (error) {
-    res.status(500).join("internal server error");
+    console.error("Login Error:", error);
+    res
+      .status(500)
+      .json({ message: "Internal server error", error: error.message });
   }
 };
 
-module.exports = { registerUser,login };
+module.exports = { registerUser, login };
