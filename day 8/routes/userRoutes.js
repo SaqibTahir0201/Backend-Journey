@@ -3,7 +3,8 @@ const express = require("express");
 const { registerUser } = require("../controllers/userController");
 const { login } = require("../controllers/userController");
 const router = express.Router();
-import UserController from "../controllers/userController.js"
+const UserController = require("../controllers/userController.js")
+// import UserController from "../controllers/userController.js"
 
 
 // POST /api/users/register
