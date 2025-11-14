@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./utils/db");
 const userRoutes = require("./routes/userRoutes");
+const errorMiddleware = require("./middlewares/error-middleware")
 
 dotenv.config();
 
@@ -18,6 +19,8 @@ connectDB();
 // Routes
 app.use("/api/users", userRoutes);
 
+// error middleware
+app.use(errorMiddleware)
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
